@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="26dp"
+    tools:context=".LoginActivity">
+
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <EditText
+            android:id="@+id/login_email"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/inputs"
+            android:hint="Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            />
+
+        <EditText
+            android:id="@+id/login_password"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/inputs"
+            android:hint="Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            />
+
+
+        <Button
+            android:id="@+id/login_button"
+            android:text="Login"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/register_account_link"
+            android:textAppearance="@android:style/TextAppearance.Small"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Don't have an account,need new Account ?"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:textAppearance="@android:style/TextAppearance.Small"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           android:gravity="center_horizontal"
+            android:text="or Login with"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

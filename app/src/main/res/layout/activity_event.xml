@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EventActivity">
+
+
+
+    <include
+        android:id="@+id/update_post_page_toolbar"
+        layout="@layout/app_bar_layout"
+        >
+
+
+
+    </include>
+
+    <LinearLayout
+        android:padding="26dp"
+        android:layout_below="@+id/update_post_page_toolbar"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/type_of_event"
+            android:hint="Type of Event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/title_of_event"
+            android:hint="Title of event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <EditText
+            android:id="@+id/dese_of_event"
+            android:hint="Desecription of event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+        <EditText
+            android:id="@+id/volunter"
+            android:hint="Approximate Volunters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+
+        <EditText
+            android:id="@+id/location_event"
+            android:hint="Location of Event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+        <EditText
+            android:id="@+id/landmark"
+            android:hint="Landmark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+        <EditText
+            android:id="@+id/time_and_date"
+            android:hint="Date and Time of event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/event_image"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_width="150dp"
+            android:layout_height="150dp" />
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/submit_event"
+            android:hint="submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>
