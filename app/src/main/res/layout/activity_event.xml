@@ -48,7 +48,7 @@
 
 
         <EditText
-            android:id="@+id/volunter"
+            android:id="@+id/volunter_event"
             android:hint="Approximate Volunters"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -65,7 +65,7 @@
 
 
         <EditText
-            android:id="@+id/landmark"
+            android:id="@+id/landmark_event"
             android:hint="Landmark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

@@ -1,4 +1,4 @@
-package com.cratisspace.wewriteone.ghmc_new;
+package com.cratisspace.wewriteone.Ghmc27;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -118,6 +119,7 @@ public class RegisterActivity extends AppCompatActivity {
                             else {
                                 String message = task.getException().toString();
                                 Toast.makeText(RegisterActivity.this, "Error"+message, Toast.LENGTH_SHORT).show();
+                                Log.d("avinash",message);
                                 loadingbar.dismiss();
 
                             }

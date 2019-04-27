@@ -4,7 +4,7 @@ apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.cratisspace.wewriteone.ghmc_new"
+        applicationId "com.cratisspace.wewriteone.Ghmc27"
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
@@ -33,6 +33,7 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
 
+
     //circle image view
 
     implementation 'de.hdodenhof:circleimageview:3.0.0'
@@ -49,4 +50,6 @@ dependencies {
 
     //noinspection GradleCompatible
     implementation 'com.android.support:design:23.1.1'
+
+    implementation 'com.github.SumiMakito:AwesomeQRCode:1.0.6'
 }

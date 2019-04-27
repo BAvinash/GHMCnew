@@ -17,12 +17,12 @@
 
         <EditText
             android:id="@+id/register_email"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/inputs"
-            android:hint="Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/inputs"
+            android:hint="Please enter Email id"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
 
             />
 

@@ -52,7 +52,8 @@
 
             />
 
-        <EditText
+        <TextView
+            android:drawableRight="@drawable/ic_keyboard_arrow_down_black_24dp"
             android:id="@+id/setup_area_name"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
             android:layout_marginTop="10dp"

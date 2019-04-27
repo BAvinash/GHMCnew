@@ -1,10 +1,9 @@
-package com.cratisspace.wewriteone.ghmc_new;
+package com.cratisspace.wewriteone.Ghmc27;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -23,11 +22,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -37,7 +33,7 @@ import java.util.HashMap;
 
 public class EventActivity extends AppCompatActivity {
 
-    private EditText type_of_event,title_of_event,dese_of_event,volunter,location_event,landmark,time_and_date;
+    private EditText type_of_event,title_of_event,dese_of_event,volunter_event,location_event,landmark_event,time_and_date;
     private Button submit;
     private ImageView imageView;
     private DatabaseReference UsersEvent;
@@ -71,9 +67,9 @@ public class EventActivity extends AppCompatActivity {
         type_of_event = (EditText)findViewById(R.id.type_of_event);
         title_of_event = (EditText)findViewById(R.id.title_of_event);
         dese_of_event = (EditText)findViewById(R.id.dese_of_event);
-        volunter = (EditText)findViewById(R.id.volunter);
+        volunter_event = (EditText)findViewById(R.id.volunter_event);
         location_event = (EditText)findViewById(R.id.location_event);
-        landmark = (EditText)findViewById(R.id.landmark);
+        landmark_event = (EditText)findViewById(R.id.landmark_event);
         time_and_date = (EditText)findViewById(R.id.time_and_date);
         submit = (Button) findViewById(R.id.submit_event);
         imageView = (ImageView)findViewById(R.id.event_image);
@@ -110,12 +106,12 @@ public class EventActivity extends AppCompatActivity {
     private void sendDataToFirebase() {
 
         String event = type_of_event.getText().toString();
-        String title = type_of_event.getText().toString();
-        String dese = type_of_event.getText().toString();
-        String volunter = type_of_event.getText().toString();
-        String locaation = type_of_event.getText().toString();
-        String landmark = type_of_event.getText().toString();
-        String time = type_of_event.getText().toString();
+        String title = title_of_event.getText().toString();
+        String dese = dese_of_event.getText().toString();
+        String volunter = volunter_event.getText().toString();
+        String locaation = location_event.getText().toString();
+        String landmark = landmark_event.getText().toString();
+        String time = time_and_date.getText().toString();
 
 
 

@@ -1,4 +1,4 @@
-package com.cratisspace.wewriteone.ghmc_new;
+package com.cratisspace.wewriteone.Ghmc27;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cratisspace.wewriteone.ghmc_new">
+    package="com.cratisspace.wewriteone.Ghmc27">
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -14,14 +14,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ComplaintActivity"></activity>
+        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".ConnectActivity" />
+        <activity android:name=".FullViewEvent" />
+        <activity android:name=".ComplaintActivity" />
         <activity android:name=".EventActivity" />
         <activity android:name=".SetupActivity" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
-        <activity android:name=".LoginActivity" >
-
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,9 +31,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

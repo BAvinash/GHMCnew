@@ -1,11 +1,12 @@
-package com.cratisspace.wewriteone.ghmc_new;
+package com.cratisspace.wewriteone.Ghmc27;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -13,10 +14,10 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
@@ -30,17 +31,17 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
-import com.theartofdev.edmodo.cropper.CropImage;
-import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SetupActivity extends AppCompatActivity {
 
-    private EditText UserName,FullName,AreaName;
+    private EditText UserName,FullName;
+    private TextView AreaName;
     private Button SaveInformationButton;
     private CircleImageView ProfileImage;
     private FirebaseAuth mAuth;
@@ -48,6 +49,10 @@ public class SetupActivity extends AppCompatActivity {
     private StorageReference UserProfileImageRef;
     String currentUserId;
     private ProgressDialog loadingbar;
+    String[] listItemstransport;
+    boolean[] checkedItemstransport;
+    ArrayList<Integer> mUserItems = new ArrayList<>();
+
 
     private int PICK_IMAGE_REQUEST = 1;
 
@@ -56,6 +61,10 @@ public class SetupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setup);
+
+        listItemstransport = getResources().getStringArray(R.array.Select_item);
+        checkedItemstransport = new boolean[listItemstransport.length];
+
 
         FirebaseApp.initializeApp(this);
 
@@ -71,7 +80,12 @@ public class SetupActivity extends AppCompatActivity {
 
         UserName = (EditText)findViewById(R.id.setup_username);
         FullName = (EditText)findViewById(R.id.setup_full_name);
-        AreaName = (EditText)findViewById(R.id.setup_area_name);
+        AreaName = (TextView)findViewById(R.id.setup_area_name);
+
+
+
+
+
         ProfileImage = (CircleImageView)findViewById(R.id.setup_profile_image);
         SaveInformationButton = (Button)findViewById(R.id.setup_information_button);
 
@@ -120,6 +134,13 @@ public class SetupActivity extends AppCompatActivity {
             }
         });
 
+        AreaName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDilogfortranspo();
+            }
+        });
+
     }
 
 
@@ -128,7 +149,7 @@ public class SetupActivity extends AppCompatActivity {
 
         String username = UserName.getText().toString();
         String fullname = FullName.getText().toString();
-        String area = AreaName.getText().toString();
+        String area = (String) AreaName.getText();
         if (TextUtils.isEmpty(username)){
             Toast.makeText(this, "Please enter username", Toast.LENGTH_SHORT).show();
             loadingbar.dismiss();
@@ -256,5 +277,68 @@ public class SetupActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+    }
+
+    private void showDilogfortranspo() {
+
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(SetupActivity.this);
+        mBuilder.setTitle("Select Area");
+        mBuilder.setMultiChoiceItems(listItemstransport, checkedItemstransport, new DialogInterface.OnMultiChoiceClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int position, boolean isChecked) {
+//                        if (isChecked) {
+//                            if (!mUserItems.contains(position)) {
+//                                mUserItems.add(position);
+//                            }
+//                        } else if (mUserItems.contains(position)) {
+//                            mUserItems.remove(position);
+//                        }
+                if(isChecked){
+                    mUserItems.add(position);
+                }else{
+                    mUserItems.remove((Integer.valueOf(position)));
+                }
+            }
+        });
+
+        mBuilder.setCancelable(false);
+        mBuilder.setPositiveButton(R.string.ok_label, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int which) {
+                String item = "";
+                for (int i = 0; i < mUserItems.size(); i++) {
+                    item = item + listItemstransport[mUserItems.get(i)];
+                    if (i != mUserItems.size() - 1) {
+                        item = item + ", ";
+                    }
+                }
+                AreaName.setText(item);
+
+
+
+            }
+        });
+
+        mBuilder.setNegativeButton(R.string.dismiss_label, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+
+        mBuilder.setNeutralButton(R.string.clear_all_label, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int which) {
+                for (int i = 0; i < checkedItemstransport.length; i++) {
+                    checkedItemstransport[i] = false;
+                    mUserItems.clear();
+                    AreaName.setText("");
+                }
+            }
+        });
+
+        AlertDialog mDialog = mBuilder.create();
+        mDialog.show();
+
     }
 }

@@ -3,4 +3,29 @@
     <string name="drawer_open">Drawer open</string>
     <string name="drawer_closer">Drawer close</string>
 
+
+    <string name="make_an_order">Make an order</string>
+    <string name="dialog_title">Items available in a shop</string>
+    <string name="ok_label">OK</string>
+    <string name="dismiss_label">Dismiss</string>
+    <string name="clear_all_label">Clear all</string>
+
+
+    <string-array name="Select_item">
+        <item> Kapra </item>
+        <item> Cherlapalli </item>
+        <item> Mallapur </item>
+        <item> Nacharam </item>
+        <item> Habsiguda </item>
+        <item> Uppal </item>
+        <item> Nagole </item>
+        <item> Kothapet </item>
+        <item> Saidabad </item>
+        <item> Moosarambagh </item>
+        <item> Barkas </item>
+        <item> Uppuguda </item>
+        <item> Vanasthalipuram </item>
+        <item> Shalibanda </item>
+    </string-array>
+
 </resources>
